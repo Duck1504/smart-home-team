@@ -45,6 +45,6 @@ public class AdminProductController {
   @DeleteMapping("/{id}")
   public MessageResponse delete(@PathVariable("id") Long id) {
     productService.delete(id);
-    return new MessageResponse("Product deleted successfully");
+    return new MessageResponse("Product successfully");
   }
 }
