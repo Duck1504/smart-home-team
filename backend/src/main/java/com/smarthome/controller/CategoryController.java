@@ -17,6 +17,7 @@ public class CategoryController {
     this.categoryService = categoryService;
   }
 
+  // No authentication required for listing categories
   @GetMapping
   public List<CategoryDto> listAll() {
     return categoryService.listAll();
