@@ -45,6 +45,6 @@ public class AdminCategoryController {
   @DeleteMapping("/{id}")
   public MessageResponse delete(@PathVariable("id") Long id) {
     categoryService.delete(id);
-    return new MessageResponse("Category deleted successfully");
+    return new MessageResponse("Category  successfully");
   }
 }
