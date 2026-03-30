@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Home Store</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="./index.html">
+        <span class="brand__mark">SH</span>
+        <span class="brand__copy">
+          <strong>Smart Home Store</strong>
+          <small>Thiết bị thông minh cho gia đình</small>
+        </span>
+      </a>
+      <nav class="header-nav">
+        <span id="userGreeting" class="header-note">Mua sắm nhanh</span>
+        <a id="adminLink" href="./admin-stats.html" hidden>Quản trị</a>
+        <a href="./cart.html">Giỏ hàng <span id="cartCountBadge" class="nav-badge">0</span></a>
+        <a id="authLink" href="./login.html">Đăng nhập</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="hero panel panel--accent">
+      <div class="hero__content">
+        <p class="eyebrow">Cửa hàng thiết bị thông minh</p>
+        <h1>Mua nhanh, giao diện gọn, vẫn đủ các bước từ chọn hàng đến đặt đơn.</h1>
+        <p class="hero__text">Lọc theo danh mục, tìm kiếm tức thì, theo dõi giỏ hàng và chuyển sang thanh toán chỉ với vài thao tác.</p>
+      </div>
+      <div class="hero__stats">
+        <div class="stat-card">
+          <span>Danh mục</span>
+          <strong id="categoryCount">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Sản phẩm hiển thị</span>
+          <strong id="productCount">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Trong giỏ</span>
+          <strong id="cartCount">0</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel toolbar">
+      <div class="toolbar__group">
+        <label class="form-field">
+          <span>Danh mục</span>
+          <select id="categorySelect">
+            <option value="">Tất cả</option>
+          </select>
+        </label>
+        <label class="form-field form-field--grow">
+          <span>Tìm nhanh</span>
+          <input id="searchInput" type="search" placeholder="Tên sản phẩm hoặc mô tả" />
+        </label>
+      </div>
+      <div class="toolbar__actions">
+        <button id="refreshBtn" class="btn btn--ghost" type="button">Làm mới</button>
+        <div id="statusMsg" class="status" aria-live="polite" hidden></div>
+      </div>
+    </section>
+
+    <section id="productGrid" class="product-grid"></section>
+  </main>
+
+  <script type="module" src="./js/products.js"></script>
+</body>
+</html>

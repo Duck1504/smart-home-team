@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản trị danh mục</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="./index.html">
+        <span class="brand__mark">SH</span>
+        <span class="brand__copy">
+          <strong>Smart Home Store</strong>
+          <small>Thiết bị thông minh cho gia đình</small>
+        </span>
+      </a>
+      <nav class="header-nav">
+        <span id="userGreeting" class="header-note">Quản trị hệ thống</span>
+        <a id="adminLink" href="./admin-stats.html" hidden>Quản trị</a>
+        <a href="./cart.html">Giỏ hàng <span id="cartCountBadge" class="nav-badge">0</span></a>
+        <a id="authLink" href="./login.html">Đăng nhập</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page page--admin">
+    <aside class="panel admin-sidebar">
+      <p class="eyebrow">Quản trị</p>
+      <nav class="admin-menu">
+        <a href="./admin-stats.html" class="admin-menu__link">Thống kê</a>
+        <a href="./admin-products.html" class="admin-menu__link">Sản phẩm</a>
+        <a href="./admin-categories.html" class="admin-menu__link admin-menu__link--active">Danh mục</a>
+        <a href="./admin-users.html" class="admin-menu__link">Người dùng</a>
+      </nav>
+    </aside>
+
+    <section class="admin-main">
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Danh mục</p>
+            <h1>Thêm, sửa, xóa danh mục</h1>
+          </div>
+          <div id="categoryStatus" class="status" aria-live="polite" hidden></div>
+        </div>
+
+        <div class="admin-columns admin-columns--narrow">
+          <section class="panel panel--soft">
+            <h2 id="categoryFormTitle">Thêm danh mục mới</h2>
+            <form id="categoryForm" class="form">
+              <input id="categoryId" type="hidden" />
+              <label class="form-field">
+                <span>Tên danh mục</span>
+                <input id="categoryName" type="text" maxlength="100" required />
+              </label>
+              <div class="form-actions">
+                <button class="btn" type="submit">Lưu danh mục</button>
+                <button id="cancelCategoryEdit" class="btn btn--ghost" type="button" hidden>Hủy chỉnh sửa</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="panel panel--soft">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Danh sách</p>
+                <h2>Danh mục hiện có</h2>
+              </div>
+              <button id="reloadCategoriesBtn" class="btn btn--ghost" type="button">Tải lại</button>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Danh mục</th>
+                    <th>Số sản phẩm</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody id="categoriesTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./js/admin-categories.js"></script>
+</body>
+</html>

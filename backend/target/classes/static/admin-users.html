@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lý người dùng</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="./index.html">
+        <span class="brand__mark">SH</span>
+        <span class="brand__copy">
+          <strong>Smart Home Store</strong>
+          <small>Thiết bị thông minh cho gia đình</small>
+        </span>
+      </a>
+      <nav class="header-nav">
+        <span id="userGreeting" class="header-note">Quản trị hệ thống</span>
+        <a id="adminLink" href="./admin-stats.html" hidden>Quản trị</a>
+        <a href="./cart.html">Giỏ hàng <span id="cartCountBadge" class="nav-badge">0</span></a>
+        <a id="authLink" href="./login.html">Đăng nhập</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page page--admin">
+    <aside class="panel admin-sidebar">
+      <p class="eyebrow">Quản trị</p>
+      <nav class="admin-menu">
+        <a href="./admin-stats.html" class="admin-menu__link">Thống kê</a>
+        <a href="./admin-products.html" class="admin-menu__link">Sản phẩm</a>
+        <a href="./admin-categories.html" class="admin-menu__link">Danh mục</a>
+        <a href="./admin-users.html" class="admin-menu__link admin-menu__link--active">Người dùng</a>
+      </nav>
+    </aside>
+
+    <section class="admin-main">
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Người dùng</p>
+            <h1>Quản lý role, đặt lại mật khẩu và xóa user</h1>
+          </div>
+          <div id="userStatus" class="status" aria-live="polite" hidden></div>
+        </div>
+
+        <p class="helper-text">Đăng ký mới tạo user với quyền <code>USER</code>. Chỉ <code>ADMIN</code> mới truy cập được khu quản trị này.</p>
+
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Tài khoản</th>
+                <th>Role</th>
+                <th>Đơn hàng</th>
+                <th>Đặt lại mật khẩu</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./js/admin-users.js"></script>
+</body>
+</html>

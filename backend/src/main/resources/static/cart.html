@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gio hang</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="./index.html">
+        <span class="brand__mark">SH</span>
+        <span class="brand__copy">
+          <strong>Smart Home Store</strong>
+          <small>Thiet bi thong minh cho gia dinh</small>
+        </span>
+      </a>
+      <nav class="header-nav">
+        <span id="userGreeting" class="header-note">Mua sam nhanh</span>
+        <a id="adminLink" href="./admin-stats.html" hidden>Quan tri</a>
+        <a href="./cart.html">Gio hang <span id="cartCountBadge" class="nav-badge">0</span></a>
+        <a id="authLink" href="./login.html">Dang nhap</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page page--split">
+    <section class="panel panel--wide">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Gio hang</p>
+          <h1>San pham ban da chon</h1>
+        </div>
+        <a class="btn btn--ghost" href="./index.html">Them san pham</a>
+      </div>
+
+      <div id="cartEmpty" class="empty-state panel panel--soft" hidden>
+        <strong>Gio hang dang trong.</strong>
+        <p>Hay quay lai danh sach san pham de them thiet bi ban muon mua.</p>
+        <a class="btn" href="./index.html">Mua ngay</a>
+      </div>
+
+      <div id="cartList" class="cart-list"></div>
+    </section>
+
+    <aside class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Thanh toan</p>
+          <h2>Tao don hang</h2>
+        </div>
+      </div>
+
+      <div class="checkout-form">
+        <label class="form-field">
+          <span>Ho va ten nguoi nhan</span>
+          <input id="customerName" type="text" placeholder="Nhap ho va ten nguoi nhan" autocomplete="name" />
+        </label>
+
+        <label class="form-field">
+          <span>So dien thoai</span>
+          <input id="phoneNumber" type="tel" inputmode="tel" placeholder="Nhap so dien thoai giao hang" autocomplete="tel" />
+        </label>
+
+        <label class="form-field">
+          <span>Dia chi nhan hang</span>
+          <textarea id="shippingAddress" placeholder="Vi du: 12 Nguyen Van A, Quan 1, TP.HCM"></textarea>
+        </label>
+
+        <fieldset class="payment-options">
+          <legend>Phuong thuc thanh toan</legend>
+          <label class="payment-option">
+            <input type="radio" name="paymentMethod" value="CASH_ON_DELIVERY" checked />
+            <span class="payment-option__copy">
+              <strong>Thanh toan khi nhan hang</strong>
+              <small>Thanh toan tien mat khi don duoc giao toi dia chi nhan hang.</small>
+            </span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="paymentMethod" value="QR_PAYMENT" />
+            <span class="payment-option__copy">
+              <strong>Quet ma thanh toan</strong>
+              <small>Luu lua chon thanh toan QR cho don hang de xac nhan khi giao dich.</small>
+            </span>
+          </label>
+        </fieldset>
+
+        <div id="checkoutPaymentNote" class="notice-card payment-note" hidden></div>
+      </div>
+
+      <div class="summary-list">
+        <div class="summary-row">
+          <span>So luong</span>
+          <strong id="itemCount">0</strong>
+        </div>
+        <div class="summary-row summary-row--total">
+          <span>Tong tien</span>
+          <strong id="totalAmount">0 đ</strong>
+        </div>
+      </div>
+
+      <button id="checkoutBtn" class="btn btn--block" type="button">Dat hang</button>
+      <div id="orderMsg" class="status" aria-live="polite" hidden></div>
+      <p class="helper-text">Can dang nhap truoc khi dat hang. Don hang chi duoc tao khi da nhap ho ten, so dien thoai, dia chi nhan hang va chon phuong thuc thanh toan.</p>
+    </aside>
+  </main>
+
+  <section class="container page page--compact">
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Lich su don hang</p>
+          <h2>Theo doi cac don da tao</h2>
+        </div>
+        <button id="loadOrdersBtn" class="btn btn--ghost" type="button">Tai lai</button>
+      </div>
+
+      <div id="ordersHint" class="status" aria-live="polite" hidden></div>
+      <div id="ordersList" class="order-list"></div>
+    </section>
+  </section>
+
+  <script type="module" src="./js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thong ke ban hang</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="./index.html">
+        <span class="brand__mark">SH</span>
+        <span class="brand__copy">
+          <strong>Smart Home Store</strong>
+          <small>Thiet bi thong minh cho gia dinh</small>
+        </span>
+      </a>
+      <nav class="header-nav">
+        <span id="userGreeting" class="header-note">Quan tri he thong</span>
+        <a id="adminLink" href="./admin-stats.html" hidden>Quan tri</a>
+        <a href="./cart.html">Gio hang <span id="cartCountBadge" class="nav-badge">0</span></a>
+        <a id="authLink" href="./login.html">Dang nhap</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page page--admin">
+    <aside class="panel admin-sidebar">
+      <p class="eyebrow">Quan tri</p>
+      <nav class="admin-menu">
+        <a href="./admin-stats.html" class="admin-menu__link admin-menu__link--active">Thong ke</a>
+        <a href="./admin-products.html" class="admin-menu__link">San pham</a>
+        <a href="./admin-categories.html" class="admin-menu__link">Danh muc</a>
+        <a href="./admin-users.html" class="admin-menu__link">Nguoi dung</a>
+      </nav>
+    </aside>
+
+    <section class="admin-main">
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Thong ke</p>
+            <h1>Bao cao thu chi va ton kho</h1>
+          </div>
+          <div class="toolbar-inline">
+            <button id="reloadStatsBtn" class="btn btn--ghost" type="button">Tai lai</button>
+            <button id="printStatsBtn" class="btn btn--ghost" type="button">In thong ke</button>
+            <div id="statsStatus" class="status" aria-live="polite" hidden></div>
+          </div>
+        </div>
+
+        <section id="statsCards" class="metric-grid"></section>
+        <div id="reportMeta" class="report-meta"></div>
+
+        <div class="admin-columns">
+          <section class="panel panel--soft">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Theo san pham</p>
+                <h2>Bang thu chi</h2>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>San pham</th>
+                    <th>Danh muc</th>
+                    <th>Da ban</th>
+                    <th>Ton kho</th>
+                    <th>Thu</th>
+                    <th>Chi</th>
+                    <th>Loi nhuan</th>
+                  </tr>
+                </thead>
+                <tbody id="productSalesBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel panel--soft">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Theo danh muc</p>
+                <h2>Tong hop nhom hang</h2>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Danh muc</th>
+                    <th>So luong ban</th>
+                    <th>Thu</th>
+                    <th>Chi</th>
+                    <th>Loi nhuan</th>
+                  </tr>
+                </thead>
+                <tbody id="categorySalesBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel panel--soft">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Don hang gan day</p>
+              <h2>Don moi nhat</h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Ma don</th>
+                  <th>Nguoi mua</th>
+                  <th>Thanh toan</th>
+                  <th>Trang thai</th>
+                  <th>Ngay tao</th>
+                  <th>Tong tien</th>
+                </tr>
+              </thead>
+              <tbody id="recentOrdersBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./js/admin-stats.js"></script>
+</body>
+</html>

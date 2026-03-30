@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quan tri san pham</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="./index.html">
+        <span class="brand__mark">SH</span>
+        <span class="brand__copy">
+          <strong>Smart Home Store</strong>
+          <small>Thiet bi thong minh cho gia dinh</small>
+        </span>
+      </a>
+      <nav class="header-nav">
+        <span id="userGreeting" class="header-note">Quan tri he thong</span>
+        <a id="adminLink" href="./admin-stats.html" hidden>Quan tri</a>
+        <a href="./cart.html">Gio hang <span id="cartCountBadge" class="nav-badge">0</span></a>
+        <a id="authLink" href="./login.html">Dang nhap</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page page--admin">
+    <aside class="panel admin-sidebar">
+      <p class="eyebrow">Quan tri</p>
+      <nav class="admin-menu">
+        <a href="./admin-stats.html" class="admin-menu__link">Thong ke</a>
+        <a href="./admin-products.html" class="admin-menu__link admin-menu__link--active">San pham</a>
+        <a href="./admin-categories.html" class="admin-menu__link">Danh muc</a>
+        <a href="./admin-users.html" class="admin-menu__link">Nguoi dung</a>
+      </nav>
+    </aside>
+
+    <section class="admin-main">
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">San pham</p>
+            <h1>Them, sua, xoa san pham</h1>
+          </div>
+          <div id="productStatus" class="status" aria-live="polite" hidden></div>
+        </div>
+
+        <div class="admin-columns">
+          <section class="panel panel--soft">
+            <h2 id="productFormTitle">Them san pham moi</h2>
+            <form id="productForm" class="form">
+              <input id="productId" type="hidden" />
+              <div class="field-grid">
+                <label class="form-field">
+                  <span>Ten san pham</span>
+                  <input id="productName" type="text" maxlength="150" required />
+                </label>
+                <label class="form-field">
+                  <span>Danh muc</span>
+                  <select id="productCategory" required></select>
+                </label>
+              </div>
+              <label class="form-field">
+                <span>Mo ta</span>
+                <textarea id="productDescription" maxlength="2000" required></textarea>
+              </label>
+              <label class="form-field">
+                <span>Thong so ky thuat</span>
+                <textarea id="productTechnicalSpecs" maxlength="4000" placeholder="Vi du:&#10;Ket noi: WiFi 2.4GHz&#10;Cong suat: 9W&#10;Bao hanh: 12 thang"></textarea>
+              </label>
+              <div class="field-grid field-grid--triple">
+                <label class="form-field">
+                  <span>Gia ban</span>
+                  <input id="productPrice" type="number" min="1" step="1000" required />
+                </label>
+                <label class="form-field">
+                  <span>Gia von</span>
+                  <input id="productCostPrice" type="number" min="0" step="1000" required />
+                </label>
+                <label class="form-field">
+                  <span>Ton kho</span>
+                  <input id="productStock" type="number" min="0" step="1" required />
+                </label>
+              </div>
+              <label class="form-field">
+                <span>Anh URL</span>
+                <input id="productImageUrl" type="text" maxlength="500" placeholder="/assets/smart-light.svg" />
+              </label>
+              <div class="form-actions">
+                <button class="btn" type="submit">Luu san pham</button>
+                <button id="cancelProductEdit" class="btn btn--ghost" type="button" hidden>Huy chinh sua</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="panel panel--soft">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Danh sach</p>
+                <h2>San pham hien co</h2>
+              </div>
+              <button id="reloadProductsBtn" class="btn btn--ghost" type="button">Tai lai</button>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>San pham</th>
+                    <th>Danh muc</th>
+                    <th>Gia ban</th>
+                    <th>Gia von</th>
+                    <th>Ton</th>
+                    <th>Thao tac</th>
+                  </tr>
+                </thead>
+                <tbody id="productsTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./js/admin-products.js"></script>
+</body>
+</html>

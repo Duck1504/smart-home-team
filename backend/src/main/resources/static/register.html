@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng ký</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="./index.html">
+        <span class="brand__mark">SH</span>
+        <span class="brand__copy">
+          <strong>Smart Home Store</strong>
+          <small>Thiết bị thông minh cho gia đình</small>
+        </span>
+      </a>
+      <nav class="header-nav">
+        <span id="userGreeting" class="header-note">Mua sắm nhanh</span>
+        <a id="adminLink" href="./admin-stats.html" hidden>Quản trị</a>
+        <a href="./cart.html">Giỏ hàng <span id="cartCountBadge" class="nav-badge">0</span></a>
+        <a id="authLink" href="./login.html">Đăng nhập</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page auth-page">
+    <section class="panel panel--accent intro-panel">
+      <p class="eyebrow">Đăng ký</p>
+      <h1>Tạo tài khoản mới để đặt hàng và theo dõi đơn.</h1>
+      <p class="hero__text">Tài khoản mới mặc định có quyền <code>USER</code>. Quyền quản trị chỉ dành cho tài khoản admin.</p>
+      <div id="sessionState" class="notice-card"></div>
+    </section>
+
+    <section class="auth-single">
+      <section class="panel">
+        <form id="registerForm" class="form">
+          <label class="form-field">
+            <span>Tên đăng nhập</span>
+            <input id="registerUsername" type="text" minlength="3" maxlength="50" required />
+          </label>
+          <label class="form-field">
+            <span>Mật khẩu</span>
+            <input id="registerPassword" type="password" minlength="6" maxlength="100" required />
+          </label>
+          <button class="btn btn--block" type="submit">Tạo tài khoản</button>
+        </form>
+        <div id="registerStatus" class="status" aria-live="polite" hidden></div>
+        <div class="auth-links">
+          <a href="./login.html">Đã có tài khoản? Đăng nhập</a>
+          <a href="./forgot-password.html">Quên mật khẩu</a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./js/register.js"></script>
+</body>
+</html>

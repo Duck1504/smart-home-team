@@ -1,0 +1,8 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="420" rx="36" fill="#E0F2FE"/>
+  <circle cx="320" cy="138" r="86" fill="#FEF3C7"/>
+  <path d="M320 72C288 72 262 98 262 130C262 154 276 176 296 188V226H344V188C364 176 378 154 378 130C378 98 352 72 320 72Z" fill="#F59E0B"/>
+  <rect x="292" y="226" width="56" height="44" rx="14" fill="#1D4ED8"/>
+  <rect x="280" y="278" width="80" height="18" rx="9" fill="#0F766E"/>
+  <text x="320" y="350" text-anchor="middle" fill="#1F2937" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="34" font-weight="700">SMART LIGHT</text>
+</svg>

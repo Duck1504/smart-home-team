@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi tiet san pham</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="./index.html">
+        <span class="brand__mark">SH</span>
+        <span class="brand__copy">
+          <strong>Smart Home Store</strong>
+          <small>Thiet bi thong minh cho gia dinh</small>
+        </span>
+      </a>
+      <nav class="header-nav">
+        <span id="userGreeting" class="header-note">Mua sam nhanh</span>
+        <a id="adminLink" href="./admin-stats.html" hidden>Quan tri</a>
+        <a href="./cart.html">Gio hang <span id="cartCountBadge" class="nav-badge">0</span></a>
+        <a id="authLink" href="./login.html">Dang nhap</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <div id="pageStatus" class="status" aria-live="polite" hidden></div>
+
+    <section id="productDetailPanel" class="panel product-detail-panel" hidden>
+      <div id="productMedia" class="product-detail__media"></div>
+
+      <div class="product-detail__content">
+        <div class="product-card__top">
+          <span id="productCategory" class="pill">Danh muc</span>
+          <span id="productStock" class="stock">Con hang</span>
+        </div>
+
+        <div>
+          <p class="eyebrow">Chi tiet san pham</p>
+          <h1 id="productName">Dang tai...</h1>
+        </div>
+
+        <div id="productRating"></div>
+        <p id="productDescription" class="product-detail__desc"></p>
+
+        <div class="product-detail__meta">
+          <article class="metric-card">
+            <span>Gia ban</span>
+            <strong id="productPrice">0 d</strong>
+          </article>
+          <article class="metric-card">
+            <span>Danh muc</span>
+            <strong id="productCategoryText">--</strong>
+          </article>
+        </div>
+
+        <section id="productSpecsSection" class="panel panel--soft product-specs" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Thong so ky thuat</p>
+              <h2>Cau hinh va tinh nang</h2>
+            </div>
+          </div>
+          <div id="productSpecsList" class="spec-grid"></div>
+        </section>
+
+        <div class="inline-actions">
+          <button id="addToCartBtn" class="btn" type="button">Them vao gio</button>
+          <a class="btn btn--ghost" href="./index.html">Quay lai cua hang</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-review-layout">
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Danh gia</p>
+            <h2>Khach hang nhan xet</h2>
+          </div>
+          <div id="reviewSummary"></div>
+        </div>
+
+        <div id="reviewsList" class="review-list"></div>
+      </section>
+
+      <aside class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Gui danh gia</p>
+            <h2>Cham diem 1-5 sao</h2>
+          </div>
+        </div>
+
+        <div id="reviewAuthHint" class="notice-card" hidden></div>
+
+        <form id="reviewForm" class="review-form">
+          <div class="form-field">
+            <span>So sao</span>
+            <div id="starPicker" class="star-picker">
+              <label class="star-picker__label" for="rating1" data-value="1">
+                <input class="star-picker__input" type="radio" id="rating1" name="rating" value="1" />
+                <span>&#9733;</span>
+              </label>
+              <label class="star-picker__label" for="rating2" data-value="2">
+                <input class="star-picker__input" type="radio" id="rating2" name="rating" value="2" />
+                <span>&#9733;</span>
+              </label>
+              <label class="star-picker__label" for="rating3" data-value="3">
+                <input class="star-picker__input" type="radio" id="rating3" name="rating" value="3" />
+                <span>&#9733;</span>
+              </label>
+              <label class="star-picker__label" for="rating4" data-value="4">
+                <input class="star-picker__input" type="radio" id="rating4" name="rating" value="4" />
+                <span>&#9733;</span>
+              </label>
+              <label class="star-picker__label" for="rating5" data-value="5">
+                <input class="star-picker__input" type="radio" id="rating5" name="rating" value="5" />
+                <span>&#9733;</span>
+              </label>
+            </div>
+          </div>
+
+          <label class="form-field">
+            <span>Nhan xet</span>
+            <textarea id="reviewComment" maxlength="1000" placeholder="Cam nhan cua ban ve san pham nay"></textarea>
+          </label>
+
+          <button id="submitReviewBtn" class="btn btn--block" type="submit">Gui danh gia</button>
+        </form>
+
+        <div id="reviewStatus" class="status" aria-live="polite" hidden></div>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module" src="./js/product-detail.js"></script>
+</body>
+</html>
